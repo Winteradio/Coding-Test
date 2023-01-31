@@ -2,6 +2,7 @@
 
 void Sort( int* Array, int* TempArray, int Start, int End )
 {
+	int Real_Start = Start;
 	int L_Start = Start;
 	int L_End = ( End + Start ) / 2;
 	int R_Start = ( End + Start ) / 2 + 1;
@@ -34,6 +35,11 @@ void Sort( int* Array, int* TempArray, int Start, int End )
 		}
 		TempArray[Start] = Array[ Index ];
 		Start++;
+	}
+	
+	for ( int I = Real_Start; I <= End; I++ )
+	{
+		Array[ I ] = TempArray[ I ];
 	}
 }
 
