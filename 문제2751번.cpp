@@ -45,7 +45,6 @@ void Sort( int* Array, int* TempArray, int Start, int End )
 
 void Merge( int* Array, int* TempArray, int Start, int End )
 {
-	printf(" Start %d End %d\n", Start, End );
 	if ( Start != End )
 	{
 		Merge( Array, TempArray, Start, ( End + Start ) / 2);
@@ -56,7 +55,6 @@ void Merge( int* Array, int* TempArray, int Start, int End )
 		return ;
 	}
 	
-	printf("Sorting! %d %d \n", Start, End );
 	Sort( Array, TempArray, Start, End );
 }
 
@@ -75,7 +73,14 @@ int main()
 	
 	for ( int I = 0; I < Num; I++ )
 	{
-		printf("%d\t", TempArray[ I ] );
+		if ( I != Num-1 )
+		{
+			printf("%d\n", NumArray[ I ] );	
+		 } 
+		 else
+		 {
+		 	printf("%d", NumArray[ I ] );
+		 }
 	}
 	
 	return 0;
